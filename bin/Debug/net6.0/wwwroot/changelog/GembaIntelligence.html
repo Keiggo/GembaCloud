@@ -1,0 +1,283 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-md-3" id="filters-panel">
+        <a style="margin-bottom: 15px; display: inline-block" href="/ChangeLog"><i class="fa fa-arrow-left-long"></i> Back to Change Log</a>
+        <ul>
+            <li>
+                <strong>Gemba Intelligence</strong>
+                <ul>
+                    <li><a href="#anomaly-detection">Anomaly Detection</a></li>
+                    <li><a href="#anomaly-types">Anomaly Types</a></li>
+                    <li><a href="#configuring-asset">Configuring GI for an Asset</a></li>
+                    <li><a href="#notifications">Anomaly Notifications &amp; Status</a></li>
+                    <li>
+                        <a href="#dashboard">Gemba Intelligence Dashboard</a>
+                        <ul>
+                            <li>
+                                <a href="#list-view">List View</a>
+                                <ul>
+                                    <li><a href="#anomaly-menu">Anomaly Menu</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#dashboard-view">Dashboard View</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#dynamic-reporting">Dynamic Reporting</a></li>
+                    <li><a href="#email">Email Subscription</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-md-9" id="content-panel">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Gemba Intelligence Module</h2>
+                <p>OEE data contains a wealth of unplanned downtime and reject detail. Manually examining this detail every Shift for each Asset is a time-consuming process and, even then, it is easy to miss small changes that can potentially become bigger issues in the future.</p>
+                <p>This is where Gemba Intelligence can help.</p>
+                <p>By using a data analysis technique called ‘anomaly detection’, values that that deviate from normal behaviour are automatically identified and raised as incidents that require further examination.</p>
+                <p>A suite of tools, including Gemba Intelligence Dashboard, Knowledge Base and Log Book Entry, are provided to help investigate and resolve any anomalies.</p>
+            </div>
+        </div>
+
+        <section id="anomaly-detection">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Anomaly Detection</h3>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p>Gemba Intelligence uses an algorithm to determine how far a particular data point is from the rest of the data. Technically speaking, the distance is known as the <em>Z score</em> and refers to the number of standard deviations (<em>sigma</em> or σ) away from the mean.</p>
+                    <p>The frequency of values within a dataset gives a distribution similar to that shown below, where 68% of data falls within 1 standard deviation (i.e. with a <em>Z score</em> between -1 and +1), 95% within 2 standard deviations (<em>Z score</em> of -2 to +2) and 99.7% within three standard deviations (<em>Z score</em> of -3 to +3) from the mean.</p>
+                    <p>The majority of data will have a <em>Z score</em> between 0 and +/-1. As <em>Z score</em> increases from the mean, the value becomes less common. A <em>Z score</em> of +/-3 or higher is commonly referred to as an outlier or an anomaly, but the actual <em>Z score</em> used can be configured within Gemba intelligence.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <img src="../images/gi/Z-Score.jpg" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Using Availability % as an example, let’s assume the Availability of Machine 1 is commonly between 50% and 85% (the mean value 78%) over an 8-week period. The previous Shift Availability of 52% (<em>Z score</em> of 2.6) was within expected limits, but the current Shift Availability is 40.9% (<em>Z score</em> of 3.1). Clearly 40.9% is much lower than 78%, and so would be identified as an anomaly by Gemba Intelligence.</p>
+                    <p>As another example, if Machine 2 typically runs between 75% and 78% then a Shift Availability of 70% would result in an anomaly being detected (<em>Z score</em> of 3.0). Even though this figure is above the Availability upper threshold of 60%, it is outside of the normal range and should be investigated. The key here is that the anomaly detection technique used by Gemba Intelligence adapts to the data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="anomaly-types">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Anomaly Types</h3>
+                    <p>The following values are assessed for anomalies each Shift:</p>
+                    <ul>
+                        <li>
+                            <strong>Availability %</strong>
+                            <ul>
+                                <li>Total duration of every unplanned downtime</li>
+                                <li>Total frequency of every unplanned downtime</li>
+                                <li>Total MTTR (Mean Time to Repair) duration of every unplanned downtime</li>
+                            </ul>
+                        </li>
+                        <li><strong>Performance %</strong></li>
+                        <li>
+                            <strong>Quality %</strong>
+                            <ul><li>Total quantity of every reject definition</li></ul>
+                        </li>
+                    </ul>
+                    <p>OEE % itself is not assessed since this is calculated from the Availability, Performance and Quality KPIs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="configuring-asset">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Configuring Gemba Intelligence for an Asset</h3>
+                    <p>In order to use Gemba Intelligence on an Asset the module must first be licenced and then the calculations enabled.</p>
+                    <p>The Asset configuration grid in the Settings > Plant menu contains an Intelligence column to quickly show which Assets have Gemba Intelligence enabled.</p>
+                    <p>To enable Gemba Intelligence for an Asset, Edit the Asset and navigate to the Gemba Intelligence tab. If the tab is not visible the module may not be licenced.</p>
+                    <p>Click the Enabled switch to turn the feature on for that specific Asset, and pre-configure it with the default settings.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p><strong>Calculation Window</strong> defines the time period in weeks used to calculate the mean and standard deviation used in the <em>Z scores</em>.</p>
+                    <p><strong>OEE Upper Threshold Filter</strong> is a behaviour which prevents an anomaly from being raised if the OEE\Availability\Performance\Quality % are above the respective upper thresholds for the Asset. For example, if the Availability upper threshold is 70% and the Shift Availability is 73% don’t raise an Availability anomaly. By default, this behaviour is disabled.</p>
+                    <p><strong>Planned Production Filter</strong> determines which Shifts are included in the calculations and eligible for anomaly detection. Only Shifts having Planned Production minutes greater than the filter minutes will be included. The default value is 0.</p>
+                    <p><strong>Net Operating Time Filter</strong> is similar to the Planned Production Filter but applies to the calculated figure of Total Units / Standard upm. Use this setting to ignore Shifts where the effect of the Total Units produced falls below the threshold. The default value is 0.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <img src="../images/gi/AssetConfig.png" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="no-style">
+                        <li>
+                            <strong>Availability Sensitivity</strong> sets the <em>Z score</em> threshold for Availability KPI anomalies. The default value is 3. The higher the value, the lower the sensitivity and less anomalies will be detected.
+                            <ul>
+                                <li><strong>Duration Filter</strong> refers to unplanned downtimes and determines which Shift downtimes are included in the calculations and eligible for anomaly detection at an Event Reason level. The default value is 0.</li>
+                                <li><strong>Duration Sensitivity</strong> refers to unplanned downtimes and sets the <em>Z score</em> threshold for individual downtime detail anomalies. The default value is 3.</li>
+                                <li><strong>Frequency Filter</strong> refers to unplanned downtimes and determines which Shift downtimes are included in the calculations and eligible for anomaly detection at an Event Reason level based on the number of occurrences within each Shift. The default value is 0.</li>
+                                <li><strong>Frequency Sensitivity</strong> refers to unplanned downtimes and sets the <em>Z score</em> threshold for individual downtime frequency detail anomalies. The default value is 3.</li>
+                                <li><strong>MTTR Duration Filter</strong> refers to the mean time to repair of unplanned downtimes and determines which Shift downtimes are included in the calculations and eligible for anomaly detection at an Event Reason level. Mean Time to Repair is a function of duration and frequency. The default value is 0.</li>
+                                <li>
+                                    <strong>MTTR Sensitivity</strong> refers to the mean time to repair for unplanned downtimes and sets the <em>Z score</em> threshold for individual downtime MTTR detail anomalies. The default value is 3.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12">
+                    <ul class="no-style">
+                        <li>
+                            <strong>Performance Sensitivity</strong> sets the <em>Z score</em> threshold for Performance KPI anomalies. The default value is 3. The higher the value, the lower the sensitivity and less anomalies will be detected.
+                            <ul>
+                                <li><strong>Asset Parameters</strong> allows the specific Parameters to be selected that are known to affect machine speed (Performance). Access to Parameter values is not common and the list will be blank if are no Parameters available.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12">
+                    <ul class="no-style">
+                        <li>
+                            <strong>Quality Sensitivity</strong> sets the <em>Z score</em> threshold for Quality KPI anomalies. The default value is 3. The higher the value, the lower the sensitivity and less anomalies will be detected.
+                            <ul>
+                                <li><strong>Reject Quantity Filter</strong> determines which Shift rejects are included in the calculations and eligible for anomaly detection at a Reject Reason level. The default value is 0.</li>
+                                <li><strong>Reject Sensitivity</strong> sets the <em>Z score</em> threshold for individual reject detail anomalies. The default value is 3.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12">
+                    <p>The Gemba Intelligence Asset configuration can be saved to multiple Assets, to reduce administration, through the use of the Copy Parameters button in the Asset configuration screen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="notifications">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Anomaly Notifications and Status</h3>
+                    <p>When an anomaly is raised it is unacknowledged by default.</p>
+                    <p>The Gemba Intelligence menu features a notification showing the number of unacknowledged anomalies within a configured timeframe for the Assets available to the current user.</p>
+                    <p style="text-align: center"><img src="../images/gi/GINotificationIcon.png" /></p>
+                    <p>The Map Overview also shows unacknowledged anomalies within the same timeframe by geographical location. Clicking View Anomalies opens the Gemba Intelligence Dashboard with corresponding filters applied.</p>
+                    <p style="text-align: center"><img src="../images/gi/MapAnomalies.png" /></p>
+                    <p>The unacknowledged anomaly timeframe is configured in Settings > Account Settings > General and is a global value that can only be changed by a user with Account Administration rights. The default value is 1 day but this can be increased accordingly.</p>
+                    <img src="../images/gi/AccountSettings.png" />
+                    <p>After an anomaly has been investigated or resolved there is the option to acknowledge it. This signals to other users that the anomaly is being dealt with and can also provide additional analysis opportunities.</p>
+                    <p>Acknowledged anomalies are excluded from the Gemba Intelligence notifications and the Map Overview.</p>
+                    <p>Use the Gemba Intelligence Dashboard to acknowledge anomalies either individually or in bulk.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Gemba Intelligence Dashboard</h3>
+                </div>
+                <div class="col-xs-1">
+                    <img src="../images/gi/Icon.png" style="position: relative; top: -2px" />
+                </div>
+                <div class="col-xs-11">
+                    <p>The dashboard is accessed from the main menu icon and consists of a filter panel and content area. The content area contains a default list view and a dashboard view.</p>
+                </div>
+                <div class="col-xs-12">
+                    <img src="../images/gi/GIDashboard.png" />
+                </div>
+            </div>
+        </section>
+
+        <section id="list-view">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>List View</h4>
+                    <p>The list view displays anomaly summaries grouped by Asset, Shift and date that match the filter panel selections. The number of anomalies for each Asset / Shift is shown plus the OEE % and an approximate cost for the anomalies in both units and time when compared to the average (mean).</p>
+                    <p>Clicking the header will sort the list so the lowest OEE or highest cost can be easily found.</p>
+                    <img src="../images/gi/AnomalySummary.png" />
+                    <p>Both the title and row checkboxes are used to acknowledge anomalies in bulk using the Acknowledge button in the top right of the screen. See below for more information on acknowledging an anomaly.</p>
+                    <p>The chart icon next to the Asset name displays the OEE Anomaly Summary Chart, which provides a history of KPI level (Availability/Performance/Quality) anomalies on that Asset over the calculation window defined in the Asset configuration. Unacknowledged anomalies are shown as red circles and acknowledged anomalies are shown in grey. Clicking on the legend will show/hide values.</p>
+                    <p style="text-align: center"><img src="../images/gi/OEESummary.png" /></p>
+                    <p>The chart icon next to the OEE figure opens the OEE Report using the same filters to provide additional detail.</p>
+                    <p>Clicking the down arrow on the left of the Asset / Shift summary record displays the individual anomaly details which may be KPI or detail types.</p>
+                    <p><img src="../images/gi/AnomalyDetail.png" /></p>
+                    <p>Anomaly status is indicated by a red exclamation for unacknowledged and a green tick for acknowledged.</p>
+                    <p>KPI anomalies refer to Availability/Performance/Quality values and these are identified by a highlighted row colour and the lack of Category, Code and Detail information. The Description shows why the anomaly was triggered, for example: “31.2% drop from the average of 88.9% to 57.8%”, and the approximate cost in both units and minutes when compared to the average (mean).</p>
+                    <div class="alert alert-info"><strong>Note:</strong> KPI costs and detail costs are calculated independently. KPI anomaly costs are used when calculating the Shift summary row information with detail anomaly costs as a fall back.</div>
+                    <p>Detail anomalies refer to unplanned downtime duration/frequency/MTTR or reject quantities and these will be displayed below their respective KPI anomalies, if they exist, with a white background. A KPI anomaly may not have any corresponding detail anomalies and vice versa. The Category, Code and Detail refer to a specific unplanned downtime Event Reason or reject. Here the description is tailored to suit the type. Minutes for unplanned downtime/MTTR and no units for frequency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="anomaly-menu">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Anomaly Menu</h5>
+                    <p>The three vertical dots at the end of each anomaly row open a context menu containing various options.</p>
+                    <p style="text-align: center"><img src="../images/gi/ContextMenu.png" /></p>
+                    <p><strong>Information</strong> menu item displays the Average (mean), the actual value and most importantly, the <em>Z score</em>. In this example, the Availability anomaly <em>Z score</em> relates to the Availability <em>Z Score</em> Sensitivity in the Asset configuration screen. Check the <em>Z score</em> and adjust the sensitivity, if required.</p>
+                    <p><img src="../images/gi/AnomalyInfo.png" /></p>
+                    <p><strong>Acknowledge</strong> menu is used to acknowledge this specific anomaly, categorise it and provide optional details on why it occurred.</p>
+                    <p style="text-align: center"><img src="../images/gi/Acknowledge.png" /></p>
+                    <p>Acknowledged Anomalies are shown with a green tick instead of a red exclamation mark. Hovering over the icon displays the detail which is also available in Dynamic Reports.</p>
+                    <p style="text-align: center"><img src="../images/gi/AcknowledgedDetail.png" /></p>
+                    <p>Clicking the Acknowledge menu for an acknowledged anomaly gives the option to edit.</p>
+                    <p><strong>View Charts</strong> for Availability and Downtime/Frequency/MTTR anomalies displays an interactive pareto chart of unplanned downtimes for the Asset / Shift and a 14-day trend of both unplanned downtime duration and frequency.</p>
+                    <p>When accessed via Availability, none of the individual downtimes are selected and the trend is total unplanned downtime and frequency for each Shift. Clicking on a pareto bar will highlight it and update the trend to show only the selected downtime.</p>
+                    <p><img src="../images/gi/AvailabilityAnomalyChart.png" /></p>
+                    <p>The same chart is shown when accessed from a downtime duration/frequency anomaly but the corresponding pareto bar is pre-selected and the trend pre-filtered.</p>
+                    <p>For rejects, the chart behaves in the same manner but displays a pareto of reject reasons instead.</p>
+                    <p>View Charts option is not displayed for Performance anomalies.</p>
+                    <p><strong>Parameter Changes</strong> menu lists Asset parameter changes made +/- 24 hours of the anomaly. Not many Assets support the recording of parameter changes so this may be blank.</p>
+                    <p>For Performance anomalies, the Asset parameter list is filtered by the Asset parameters selected in the Asset configuration screen. This allows users to focus on settings which primarily affect machine speed.</p>
+                    <p><strong>Log Book</strong> searches for any Log Book records for the Asset +/- 24 hours that contain information pertinent to the anomaly. It may be a component was replaced, a scheduled maintenance activity completed or even just a general comment relating to Asset function.</p>
+                    <p><img src="../images/gi/LogBook.png" /></p>
+                    <p><strong>Knowledge Base</strong> is only available for detail anomalies and returns any Articles containing potential solutions for the corresponding unplanned downtime or reject reasons.</p>
+                    <p><img src="../images/gi/KnowledgeBase.png" /></p>
+                    <p><strong>Create Action</strong> requires the Action module to be licenced and raises an Action to be assigned and resolved for the anomaly.</p>
+                    <p>Actions are pre-populated with anomaly detail including the Asset and Shift.</p>
+                    <p><img src="../images/gi/CreateAction.png" /></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard-view">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>Dashboard View</h4>
+                    <p>The Dashboard View is accessed by clicking the Dashboard button in the top right of the screen. The button changes to List View providing the method to return to the default screen layout.</p>
+                    <p>The dashboard provides a summary of the anomalies selected in the filter panel showing total counts per type and daily counts per type. These can be useful when determining where to focus effort and identify patterns of increasing anomalies of a certain type.</p>
+                    <p><img src="../images/gi/DashboardView.png" /></p>
+                    <p>Further analysis can be performed in Dynamic Reporting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dynamic-reporting">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>Dynamic Reporting</h4>
+                    <p>Gemba Intelligence reports have been added to Dynamic reporting to provide more advanced analysis than the Gemba Intelligence Dashboard.</p>
+                    <p>Group anomaly types by Asset, Shift and even day of the week to gain further insights.</p>
+                    <p><img src="../images/gi/DynamicReporting.png" /></p>
+                    <p>Summarize by unplanned downtime or reject reason anomalies to see worst offenders at site or machine level.</p>
+                    <p>Raw data is available for export and includes acknowledge comments and categories.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="email">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>Gemba Intelligence Email Subscription</h4>
+                    <p>The User Profile page contains Gemba Intelligence settings where a user can subscribe to receive email notifications when anomalies occur.</p>
+                    <p>There is the option of:</p>
+                    <ul>
+                        <li>Disabled</li>
+                        <li>KPI level anomalies only (Availability/Performance/Quality)</li>
+                        <li>KPI and detail which covers all anomalies</li>
+                    </ul>
+                    <p><img src="../images/gi/EmailSettings.png" /></p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

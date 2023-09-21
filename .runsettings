@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<Playwright>
+		<BrowserName></BrowserName>
+		<LaunchOptions>
+			<Headless>false</Headless>
+			<Channel>msedge</Channel>
+		</LaunchOptions>
+	</Playwright>
+	<TestRunParameters>
+		<Parameter name="ScreenshotSaveLocation" value="C:\Users\darkei\Pictures\TestScreenshots\" />
+		<Parameter name="BrowserName" value="Chromium" />
+		<Parameter name="ReferenceImagesLocation" value="C:\Projects\Gemba 4 Cloud\GembaCloud.PlaywrightTests\Helpers\ReferenceImages\"/>
+	</TestRunParameters>
+</RunSettings>

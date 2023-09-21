@@ -1,0 +1,807 @@
+{
+  "SprocFilterDataSource": [
+    {
+      "name": "1",
+      "sproc": "ENTI_S_GetHPLAEntitiesByType",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "EntityTypeIDList",
+          "type": "3",
+          "value": "1"
+        },
+        {
+          "name": "HplaGroupID",
+          "type": "3",
+          "value": "1"
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "ParentID",
+          "value": null
+        },
+        {
+          "name": "TypeID",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "sproc": "ENTI_S_GetHPLAEntitiesByType",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "EntityTypeIDList",
+          "type": "3",
+          "value": "2"
+        },
+        {
+          "name": "HplaGroupID",
+          "type": "3",
+          "value": "1"
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "ParentID",
+          "value": null
+        },
+        {
+          "name": "TypeID",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "sproc": "ENTI_S_GetEntitiesForUserIDByType",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "UserID",
+          "type": "3",
+          "value": "1"
+        },
+        {
+          "name": "Type",
+          "type": "3",
+          "value": "3"
+        },
+        {
+          "name": "TypeListFilter",
+          "type": "200",
+          "value": null
+        },
+        {
+          "name": "SourceFlag",
+          "type": "3",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "ParentID",
+          "value": null
+        },
+        {
+          "name": "TypeID",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "13",
+      "sproc": "ENTI_S_GetHPLAEntitiesByType",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "EntityTypeIDList",
+          "type": "3",
+          "value": "13"
+        },
+        {
+          "name": "HplaGroupID",
+          "type": "3",
+          "value": "1"
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "ParentID",
+          "value": null
+        },
+        {
+          "name": "TypeID",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "AssetGroupWorkCentresAssets",
+      "sproc": "ENTI_S_GetHPLAEntitiesByType",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "EntityTypeIDList",
+          "type": "3",
+          "value": "1,2,13"
+        },
+        {
+          "name": "HplaGroupID",
+          "type": "3",
+          "value": "1"
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "ParentID",
+          "value": null
+        },
+        {
+          "name": "TypeID",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "Asset",
+      "sproc": "ASSE_S_GetAssets",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "AssetGroup",
+      "sproc": "ASSE_S_GetAssetGroups",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "EntityID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "CountCategory",
+      "sproc": "COUN_S_GetCountCategories",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "CategoryID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "CountDefinition",
+      "sproc": "COUN_S_GetCountDefinitions",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "DefinitionID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "EventCategory",
+      "sproc": "EVEN_S_GetEventCategories",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "CategoryID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "EventReason",
+      "sproc": "EVEN_S_GetEventReasons",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "ReasonID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "Operator",
+      "sproc": "OPER_S_GetOperators",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        },
+        {
+          "name": "OperatorID",
+          "type": "3",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "OperatorID",
+          "value": null
+        },
+        {
+          "name": "EmployeeNumber",
+          "value": null
+        },
+        {
+          "name": "FirstName",
+          "value": null
+        },
+        {
+          "name": "LastName",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "Part",
+      "sproc": "PART_S_GetParts",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "PartID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "Shift",
+      "sproc": "SHIF_S_GetShifts",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "ShiftID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "sproc": "USER_S_GetRelevantUsersForTenant",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "IncludeGuests",
+          "value": false
+        },
+        {
+          "name": "IncludeSysAdmins",
+          "value": false
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "UserID",
+          "value": null
+        },
+        {
+          "name": "DisplayName",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "PerformanceReason",
+      "sproc": "PERF_S_GetPerformanceReasons",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "CultureID",
+          "value": null
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": null
+        },
+        {
+          "name": "ReasonID",
+          "type": "3",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "ReasonID",
+          "value": null
+        },
+        {
+          "name": "Code",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "ChangeParameter",
+      "sproc": "ASSE_S_GetAssetChangeParameters",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "ParameterID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "AnomalyType",
+      "sproc": "ANOM_S_GetAnomalyTypes",
+      "params": [
+      ],
+      "returnValues": [
+        {
+          "name": "TypeID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormCategory",
+      "sproc": "FORM_S_GetFilteredFormCategories",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "HplaGroupID",
+          "value": null
+        },
+        {
+          "name": "UserID",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "FormCategoryID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormTemplate",
+      "sproc": "FORM_S_GetFilteredPublishedFormDefinitions",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "HplaGroupID",
+          "value": null
+        },
+        {
+          "name": "UserID",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "FormDefinitionID",
+          "value": null
+        },
+        {
+          "name": "Name",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormStatusCombined",
+      "sproc": "FORM_S_GetCombinedStatusAndResult",
+      "params": [
+      ],
+      "returnValues": [
+        {
+          "name": "StatusID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormStatus",
+      "sproc": "FORM_S_GetFormStatus",
+      "params": [
+      ],
+      "returnValues": [
+        {
+          "name": "StatusID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormResult",
+      "sproc": "FORM_S_GetFormResults",
+      "params": [
+      ],
+      "returnValues": [
+        {
+          "name": "ResultID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormSource",
+      "sproc": "FORM_S_GetFormSources",
+      "params": [
+      ],
+      "returnValues": [
+        {
+          "name": "SourceID",
+          "value": null
+        },
+        {
+          "name": "Description",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "AssigneeUser",
+      "sproc": "USER_S_GetFormAssignees",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "UserID",
+          "value": null
+        },
+        {
+          "name": "DisplayName",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "OwnerUser",
+      "sproc": "USER_S_GetFormOwners",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "UserID",
+          "value": null
+        },
+        {
+          "name": "DisplayName",
+          "value": null
+        }
+      ]
+    },
+    {
+      "name": "FormQuestions",
+      "sproc": "FORM_S_GetFilteredFormQuestionsByType",
+      "params": [
+        {
+          "name": "TenantID",
+          "value": null
+        },
+        {
+          "name": "HplaGroupID",
+          "value": null
+        },
+        {
+          "name": "UserID",
+          "value": null
+        },
+        {
+          "name": "TypeListFilter",
+          "type": "200",
+          "value": null
+        }
+      ],
+      "returnValues": [
+        {
+          "name": "CategoryID",
+          "value": null
+        },
+        {
+          "name": "Category",
+          "value": null
+        },
+        {
+          "name": "FormDefinitionID",
+          "value": null
+        },
+        {
+          "name": "Form",
+          "value": null
+        },
+        {
+          "name": "PageID",
+          "value": null
+        },
+        {
+          "name": "Page",
+          "value": null
+        },
+        {
+          "name": "SectionID",
+          "value": null
+        },
+        {
+          "name": "Section",
+          "value": null
+        },
+        {
+          "name": "QuestionID",
+          "value": null
+        },
+        {
+          "name": "Question",
+          "value": null
+        },
+        {
+          "name": "QuestionType",
+          "value": null
+        }
+      ]
+    }
+  ]
+}

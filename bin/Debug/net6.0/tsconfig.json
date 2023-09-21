@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": "wwwroot/js",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "downlevelIteration": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable"
+    ]
+  },
+  "include": [
+    "Scripts/**/*"
+  ],
+  "compileOnSave": true
+}
